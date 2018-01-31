@@ -41,9 +41,12 @@ def get_word_value(word):
 #  if word.isalpha():
 #    print("The word " + word + " adds up to " + str(get_word_value(word))) 
 
-with open('american-english') as file_object:
-    for line in file_object:
-        if line.strip().isalpha():
-            temp_word = line.strip().lower()   
-            if get_word_value(temp_word) == 100:
-    	        print(temp_word)
+output_file = 'words100.txt'
+with open(output_file, 'w') as write_object:
+
+    with open('american-english') as read_object:
+        for line in read_object:
+            if line.strip().isalpha():
+                temp_word = line.strip().lower()   
+                if get_word_value(temp_word) == 100:
+    	            write_object.write(temp_word + '\n')
