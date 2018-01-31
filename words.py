@@ -37,6 +37,13 @@ def get_word_value(word):
 
 
 
-word = input("Please give me a word to add up ").lower() 
-if word.isalpha():
-    print("The word " + word + " adds up to " + str(get_word_value(word))) 
+#  word = input("Please give me a word to add up ").lower() 
+#  if word.isalpha():
+#    print("The word " + word + " adds up to " + str(get_word_value(word))) 
+
+with open('american-english') as file_object:
+    for line in file_object:
+        if line.strip().isalpha():
+            temp_word = line.strip().lower()   
+            if get_word_value(temp_word) == 100:
+    	        print(temp_word)
