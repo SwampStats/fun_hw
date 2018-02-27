@@ -50,3 +50,4 @@ with open(output_file, 'w') as write_object:
                 temp_word = line.strip().lower()   
                 if get_word_value(temp_word) == 100:
     	            write_object.write(temp_word + '\n')
+                    print(temp_word) 
